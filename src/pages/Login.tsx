@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Container, Input, Wrapper } from "../global/styles/Login";
 import { FaGithub, FaArrowRight } from 'react-icons/fa';
 import { api } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Hooks/Auth";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const {username, setUsername} = useAuth()
   const navigate = useNavigate();
 
   const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,14 +18,13 @@ const Login = () => {
   
     try {
       const response = await api.get(username)
-      console.log(response.data);
-      navigate("/home")
-      
+      localStorage.setItem('username', username)
+      localStorage.setItem('user', JSON.stringify(response.data))
+      /* Falta inserir a rota HOME */
     }
     catch (err) {
       return console.log(err)
     }
-    
   }
 
   return(

@@ -3,12 +3,12 @@ import GlobalStyle from './global/styles/Global'
 import router from './router'
 const App = () => {
 
-  return (
+  return (  
     <>
       <GlobalStyle/>
       <RouterProvider router={router} />
     </>
-  )
+    )
 }
 
 export default App

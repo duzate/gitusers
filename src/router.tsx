@@ -13,6 +13,7 @@ import Followers from "./pages/Followers";
 
 const router = createBrowserRouter(
   createRoutesFromChildren(
+    
     <Route path="/" >
       <Route path="home" element={<Home />} />
       <Route path="login" element={<Login />} />

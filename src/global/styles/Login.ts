@@ -12,27 +12,26 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;  
-  min-width: 375px;
-  max-height: 812px;
+  width: 30vw;
+  height: 100vh;
   background-color: ${theme.colors.background};
-  border-radius: 12px;
+  border-radius: .8em;
 
   svg {
     color: #FFCE00;
     margin: 0;
-    height: 100px;
   }
 `;
 
 export const Input = styled.input`
-  width: 339px;
-  height: 56px;
-  border-radius: 12px;
-  margin-top: 50px;
+  width: 20rem;
+  height: 3rem;
+  border-radius: .6em;
+  margin-top: 2.2em;
   border: none;
-  padding: 15px 20px;
+  padding: 1em 1em;
   outline: none;
-  font-size: 20px;
+  font-size: 1.25em;
   &:hover {
     border: none;
   }
@@ -42,10 +41,11 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  height: 56px;
-  width: 339px;
-  border-radius: 12px;
-  margin-top: 19px;
+  height: 3rem;
+  width: 20rem;
+  font-size: 1.25em;
+  border-radius: .6em;
+  margin-top: 1.2em;
   border: none;
   background-color: ${theme.colors.git};
   display: flex;
@@ -57,14 +57,14 @@ export const Button = styled.button`
   span {
     display: flex;
     align-items: center;
-    margin-right: 10px;
-    font-size: 24px;
+    margin-right: .8em;
+    font-size: 1em;
     font-weight: bold;
   }
 
   svg {
     fill: ${theme.colors.black};
-    font-size: 18px;
+    font-size: 1em;
   }
 `
 
