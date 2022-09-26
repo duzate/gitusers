@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Hooks/Auth";
 
 const Login = () => {
-  const {username, setUsername} = useAuth()
+  const {setUser, username, setUsername} = useAuth()
   const navigate = useNavigate();
 
   const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +20,8 @@ const Login = () => {
       const response = await api.get(username)
       localStorage.setItem('username', username)
       localStorage.setItem('user', JSON.stringify(response.data))
-      /* Falta inserir a rota HOME */
+      setUser(response.data)
+      navigate('/home')
     }
     catch (err) {
       return console.log(err)

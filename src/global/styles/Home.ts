@@ -67,7 +67,7 @@ export const Avatar = styled.div`
     width: 7rem;
     border: 2px solid ${theme.colors.white};
     border-radius: 50rem;
-    margin-top: -10vh;
+    margin-top: -6vh;
   }
 `
 export const Profile = styled.div`
@@ -78,6 +78,7 @@ export const Profile = styled.div`
     align-items: center;
     font-size: 26px;
     font-weight: bold;
+    text-transform: uppercase;
   }
 `
 

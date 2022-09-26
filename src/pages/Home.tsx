@@ -13,14 +13,12 @@ const Home = () => {
   const navigate = useNavigate();
   
   const handleLogout = () => {
-    navigate('/login')
     setUsername('')
     setUser({} as  UserProps)
-    localStorage.setItem('user', '')
-    localStorage.setItem('username', '')
-  }
-  console.log(user);
-  
+    localStorage.removeItem('user')
+    localStorage.removeItem('username')
+    navigate('/login')
+  }  
 
   return(
     <Wrapper>
@@ -47,16 +45,16 @@ const Home = () => {
         </Profile>
         <Contact>
           <span>
-            duzate@gmail.com
+            {user.email}
           </span>
           <span>
-            Ananindeua/PA
+            {user.location}
           </span>
         </Contact>
         <Stripe>
-          <Button title="Seguidores" number={user.followers}/>
-          <Button title="Seguindo" number={user.following}/>
-          <Button title="Repos" number={user.public_repos}/>
+          <Button title="Seguidores" number={user.followers} link={user.followers_url} />
+          <Button title="Seguindo" number={user.following} link={user.following_url} />
+          <Button title="Repos" number={user.public_repos} link={user.public_repos} />
         </Stripe>
         <Bio>
           <Aside/>
