@@ -1,10 +1,14 @@
-import React from "react";
+
+import { LayoutDefault } from "../components/Default";
+import { HeaderPage } from "../components/HeaderPage";
+import { useAuth } from "../Hooks/Auth";
 
 const Followers = () => {
+  const {user} = useAuth()
   return(
-    <h1>
-      Followers
-    </h1>
+    <LayoutDefault>
+      <HeaderPage title={Number.parseInt(user.followers) > 1 ? "Seguindores" : 'Seguidor' } repo={user.followers} />
+    </LayoutDefault>
   )
 }
 

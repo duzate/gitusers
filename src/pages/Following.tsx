@@ -1,10 +1,14 @@
-import React from "react";
+
+import { LayoutDefault } from "../components/Default";
+import { HeaderPage } from "../components/HeaderPage";
+import { useAuth } from "../Hooks/Auth";
 
 const Following = () => {
+  const {user} = useAuth()
   return(
-    <h1>
-      Following
-    </h1>
+    <LayoutDefault>
+      <HeaderPage title="Seguindo" repo={user.following} />
+    </LayoutDefault>
   )
 }
 
