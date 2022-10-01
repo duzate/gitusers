@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Hooks/Auth";
 import { Button } from "../components/Button";
 import { Aside } from "../components/Aside/styles";
-import { UserProps } from "../providers/Auth";
+import { UserProps } from "../@types/User";
+import { Footer } from "../components/Footer";
+import { LayoutDefault } from "../components/Default";
 
 const Home = () => {
   const {user, setUser, setUsername} = useAuth();
@@ -23,26 +25,26 @@ const Home = () => {
   return(
     <Wrapper>
       <Container>
-        <Header>
+      <Header>
+        <span>
+          #{user.login}
+        </span>
+        <Logout onClick={handleLogout}>
           <span>
-            #{user.login}
+            Sair
           </span>
-          <Logout onClick={handleLogout}>
-            <span>
-              Sair
-            </span>
-            <FiLogOut/>
-          </Logout>
-        </Header>
-          <Avatar>
-            <img src={user.avatar_url}/>
-          </Avatar>
-        <Profile>
-          <AsideBar/>
-          <span>
-            {(user.name)}
-          </span>
-        </Profile>
+          <FiLogOut/>
+        </Logout>
+      </Header>
+        <Avatar>
+          <img src={user.avatar_url}/>
+        </Avatar>
+      <Profile>
+        <AsideBar/>
+        <span>
+          {(user.name)}
+        </span>
+      </Profile>
         <Contact>
           <span>
             {user.email}
@@ -63,7 +65,8 @@ const Home = () => {
         <Content>
           {user.bio}
         </Content>
-      </Container>
+        <Footer/>
+    </Container>
     </Wrapper>
   )
 }

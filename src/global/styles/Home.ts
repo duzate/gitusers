@@ -93,7 +93,7 @@ export const Stripe = styled.div`
   display: flex;
   justify-content: space-around;
   width: 30vw;
-  height: 15vh;
+  height: 12vh;
   background-color: ${theme.colors.stripe};
   margin-top: 6vh;
 `;
@@ -102,6 +102,7 @@ export const Bio = styled.div`
   display: flex;
   width: 30vw;
   margin: 1rem;
+
   span {
     display: flex;
     align-items: center;
@@ -112,5 +113,6 @@ export const Bio = styled.div`
 
 export const Content = styled.div`
   width: 30vw;
-  margin-left: 3rem;
+  padding: 0 1.5rem;
+  text-align: justify;
 `;
