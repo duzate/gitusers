@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { FooterButton } from "../Footer";
+import { Footer } from "../Footer";
 import { Container, Wrapper } from "./styles"
 
 type Props = {
@@ -11,7 +11,7 @@ export const LayoutDefault = ({children}: Props) => {
     <Wrapper>
       <Container>
         {children}
-        <FooterButton/>
+        <Footer/>
       </Container>
     </Wrapper>
   )

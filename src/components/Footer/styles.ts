@@ -8,4 +8,7 @@ export const Container = styled.div`
   width: 30vw;
   height: 10vh;
   border-radius: .6em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 `;

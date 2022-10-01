@@ -1,31 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { UserContextProps } from '../@types/UserContext';
+import { UserProps } from '../@types/User';
 
-export type UserProps = {
-  login: string;
-  name: string;
-  email: string;
-  location: string;
-  company: string;
-  bio: string;
-  avatar_url: string;
-  followers_url: string;
-  following_url: string;
-  organizations_url: string
-  starred_url: string, 
-  public_repos: string, 
-  public_gists: string, 
-  followers: string, 
-  following: string
-}
-
-type ContextProps = {
-  username: string;
-  setUsername:React.Dispatch<React.SetStateAction<string>>;
-  user: UserProps; 
-  setUser:React.Dispatch<React.SetStateAction<UserProps>>
-}
-
-export const UserContext = createContext<ContextProps>({} as ContextProps);
+export const UserContext = createContext<UserContextProps>({} as UserContextProps);
 
 type Props = {
   children?: React.ReactNode

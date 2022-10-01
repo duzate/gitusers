@@ -6,14 +6,16 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 6rem;
 `;
 
 export const Count = styled.div`
   display: flex;
-  font-size: 40pt;
+  font-size: 2rem;
   font-weight: bold;
   justify-content: center;
   align-items: center;
+  width: 2rem;
 
   span {
     display: flex;
