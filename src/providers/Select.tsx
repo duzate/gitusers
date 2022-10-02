@@ -1,6 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { SelectContextProps } from '../@types/SelectContext';
-import { UserProps } from '../@types/User';
 
 export const SelectContext = createContext<SelectContextProps>({} as SelectContextProps);
 
@@ -8,16 +7,16 @@ type Props = {
   children?: React.ReactNode
 };
 
-export const UserProvider = ({ children }: Props) => {
-  const [isActive, setIsActive] = useState(false)
+export const SelectProvider = ({ children }: Props) => {
+  const [select, setSelect] = useState('1')
   
   useEffect(()=> {
     const selectStorage = localStorage.getItem('selected')
-    selectStorage ? setIsActive(JSON.parse(selectStorage)) : ''
+    selectStorage ? setSelect(selectStorage) : ''
   }, [])
-
+  
   return (
-    <SelectContext.Provider value={ {isActive,setIsActive} }>
+    <SelectContext.Provider value={ {select,setSelect} }>
       {children}
     </SelectContext.Provider>
   )

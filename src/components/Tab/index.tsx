@@ -1,18 +1,22 @@
-import React, { ComponentType, useState } from 'react'
+import { ComponentType, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useSelect } from '../../Hooks/Select';
 import { Tabs } from './styles'
+
 type TabProps = {
   icon: ComponentType;
   title: string;
-  link: string;
+  isActive?: boolean;
+  onClick: () => void
 }
 
-export const Tab = ({title, icon: Icon, link}: TabProps) => {
-  const navigate = useNavigate()
-  const [isActive, setIsActive] = useState(false);
+export const Tab = ({title, icon: Icon, isActive = false, ...rest}: TabProps) => {
+  const {select} = useSelect();
+  console.log(select);
+  
   return(
-    <Tabs onClick={() => {navigate(`${link}`); setIsActive(true)} } isActive={isActive} >
-      {Icon && <Icon/>}
+    <Tabs {...rest} isActive={isActive}>
+      <Icon/>
       <span>
         {title}
       </span>
