@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "./Themes";
+import { theme } from "../../global/styles/Themes";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -32,10 +32,11 @@ export const Input = styled.input`
   padding: 1em 1em;
   outline: none;
   font-size: 1.25em;
-  &:hover {
+  
+  :hover {
     border: none;
   }
-  &:focus{
+  :focus{
     border: none;
   }
 `;

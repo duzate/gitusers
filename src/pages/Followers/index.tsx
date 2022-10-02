@@ -1,7 +1,7 @@
 
-import { LayoutDefault } from "../components/Default";
-import { HeaderPage } from "../components/HeaderPage";
-import { useAuth } from "../Hooks/Auth";
+import { LayoutDefault } from "../../components/LayoutDefault";
+import { HeaderPage } from "../../components/HeaderPage";
+import { useAuth } from "../../Hooks/Auth";
 
 const Followers = () => {
   const {user} = useAuth()

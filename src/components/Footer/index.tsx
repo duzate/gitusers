@@ -5,7 +5,6 @@ import { Container } from "./styles"
 
 export const Footer = () => {
   const {select} = useSelect();
-  console.log(select);
   return(
     <Container>
       <TabSelect 

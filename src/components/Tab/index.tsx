@@ -12,7 +12,6 @@ type TabProps = {
 
 export const Tab = ({title, icon: Icon, isActive = false, ...rest}: TabProps) => {
   const {select} = useSelect();
-  console.log(select);
   
   return(
     <Tabs {...rest} isActive={isActive}>

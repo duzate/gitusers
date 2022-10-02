@@ -1,14 +1,16 @@
 import React from "react";
-import { Button, Container, Input, Wrapper } from "../global/styles/Login";
+import { Button, Container, Input, Wrapper } from "./styles";
 import { FaGithub, FaArrowRight } from 'react-icons/fa';
-import { api } from "../services/api";
+import { useApi } from "../../services/api";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../Hooks/Auth";
+import { useAuth } from "../../Hooks/Auth";
+import { useRepos } from "../../Hooks/Repos";
 
 const Login = () => {
-  const {setUser, username, setUsername} = useAuth()
+  const {setUser, username, setUsername} = useAuth();
+  const {setRepos} = useRepos();
   const navigate = useNavigate();
-
+  const api = useApi()
   const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value)
   }
@@ -17,10 +19,15 @@ const Login = () => {
     if(!username) return console.log('Erro');
   
     try {
-      const response = await api.get(username)
+      const login = await api.login(username)
       localStorage.setItem('username', username)
-      localStorage.setItem('user', JSON.stringify(response.data))
-      setUser(response.data)
+      localStorage.setItem('user', JSON.stringify(login))
+      setUser(login)
+      const repos = await api.repos(username);
+      console.log(repos);
+      
+      localStorage.setItem('repos', JSON.stringify(repos))
+      setRepos(repos)
       navigate('/home')
     }
     catch (err) {

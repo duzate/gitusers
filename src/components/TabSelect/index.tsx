@@ -11,8 +11,7 @@ export function TabSelect({
  
 }: Props){
   const navigate = useNavigate()
-  const {select, setSelect} = useSelect()
-  console.log(select);
+  const {setSelect} = useSelect()
   return(
     <>
       {

@@ -1,14 +1,13 @@
 
-import { Wrapper, Avatar, Container, Header, Logout, Profile, Contact, Stripe, Bio, Content } from "../global/styles/Home";
+import { Avatar, Header, Logout, Profile, Contact, Stripe, Bio, Content } from "./styles";
 import { FiLogOut } from 'react-icons/fi'
-import { AsideBar } from "../components/Aside";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../Hooks/Auth";
-import { Button } from "../components/Button";
-import { Aside } from "../components/Aside/styles";
-import { UserProps } from "../@types/User";
-import { Footer } from "../components/Footer";
-import { LayoutDefault } from "../components/Default";
+import { useAuth } from "../../Hooks/Auth";
+import { Button } from "../../components/Button";
+import { UserProps } from "../../@types/User";
+import { Footer } from "../../components/Footer";
+import { LayoutDefault } from "../../components/LayoutDefault";
+import { Aside } from "../../components/Aside";
 
 const Home = () => {
   const {user, setUser, setUsername} = useAuth();
@@ -16,15 +15,14 @@ const Home = () => {
   
   const handleLogout = () => {
     setUsername('')
-    setUser({} as  UserProps)
+    setUser({} as UserProps)
     localStorage.removeItem('user')
     localStorage.removeItem('username')
     navigate('/login')
   }  
 
   return(
-    <Wrapper>
-      <Container>
+    <LayoutDefault>
       <Header>
         <span>
           #{user.login}
@@ -40,10 +38,7 @@ const Home = () => {
           <img src={user.avatar_url}/>
         </Avatar>
       <Profile>
-        <AsideBar/>
-        <span>
-          {(user.name)}
-        </span>
+        <Aside title={user.name}/>
       </Profile>
         <Contact>
           <span>
@@ -59,16 +54,14 @@ const Home = () => {
           <Button title="Repos" number={user.public_repos} link={user.public_repos} />
         </Stripe>
         <Bio>
-          <Aside/>
-          <span>BIO</span>
+          <Aside title="BIO"/>
         </Bio>
         <Content>
           {user.bio}
         </Content>
         <Footer/>
-    </Container>
-    </Wrapper>
-  )
+    </LayoutDefault>
+    )
 }
 
 export default Home;

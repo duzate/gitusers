@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "./Themes";
+import { theme } from "../../global/styles/Themes";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -73,13 +73,6 @@ export const Avatar = styled.div`
 export const Profile = styled.div`
   width: 30vw;
   display: flex;
-  span {
-    display: flex;
-    align-items: center;
-    font-size: 26px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
 `
 
 export const Contact = styled.div`
@@ -102,13 +95,7 @@ export const Bio = styled.div`
   display: flex;
   width: 30vw;
   margin: 1rem;
-
-  span {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.3rem;
-  }
+  text-transform: uppercase;
 `;
 
 export const Content = styled.div`

@@ -1,5 +1,6 @@
 export const theme = {
   colors: {
+    on: '#63BF1F',
     git: '#FFCE00',
     line: '#D03434',
     black: '#000000',

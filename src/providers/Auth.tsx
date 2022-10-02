@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import { UserContextProps } from '../@types/UserContext';
 import { UserProps } from '../@types/User';
 
-export const UserContext = createContext<UserContextProps>({} as UserContextProps);
+export const UserContext = createContext({} as UserContextProps);
 
 type Props = {
   children?: React.ReactNode
