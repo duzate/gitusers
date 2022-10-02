@@ -10,7 +10,8 @@ type Props = {
 
 export const ReposProvider = ({ children }: Props) => {
   
-  const [repos, setRepos] = useState({} as ReposProps)
+  const [repos, setRepos] = useState([{}] as ReposProps)
+
   useEffect(()=> {
     const ReposStorage = localStorage.getItem('repos')
     ReposStorage ? setRepos(JSON.parse(ReposStorage)) : ''

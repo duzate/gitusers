@@ -10,6 +10,7 @@ type Props = {
   isPrivate: boolean,
   stars: string
 }
+
 export const Repo = ({name, description, isPrivate, stars}: Props) => {
   return(
     <Container>
@@ -37,7 +38,6 @@ export const Repo = ({name, description, isPrivate, stars}: Props) => {
             <BiLockOpenAlt/> 
           }
         </Padlock>
-        
       </Infos>
     </Container>
   )

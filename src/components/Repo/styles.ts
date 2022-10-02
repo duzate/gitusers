@@ -6,6 +6,7 @@ export const Container = styled.div`
   width: 30vw;
   margin: 1rem;
   flex-direction: column;
+  border-bottom: 1px solid ${theme.colors.hover};
 `;
 
 export const Title = styled.div`
@@ -14,15 +15,20 @@ export const Title = styled.div`
 
   span {
     font-size: 1.5rem;
-    text-transform: lowercase;
+    text-transform: lowercase;      
   }
 `;
 
 export const Description = styled.div`
   display: flex;
   width: 30vw;
-  padding: .8rem 1.6rem 1.3rem 1.3rem;
   font-size: 1rem;
+  padding: .8rem 0 1.3rem 1.3rem;
+
+  span {
+    padding: 0 1.3rem 1.3rem 0;
+    text-align: justify;
+  }
 `
 
 export const Infos = styled.div`

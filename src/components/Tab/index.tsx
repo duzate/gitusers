@@ -10,7 +10,7 @@ type TabProps = {
   onClick: () => void
 }
 
-export const Tab = ({title, icon: Icon, isActive = false, ...rest}: TabProps) => {
+export const Tab = ({ title, icon: Icon, isActive = false, ...rest}: TabProps) => {
   const {select} = useSelect();
   
   return(

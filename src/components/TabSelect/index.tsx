@@ -6,12 +6,10 @@ type Props = {
   tabSelected: string;
 }
 
-export function TabSelect({ 
-  tabSelected, 
- 
-}: Props){
+export function TabSelect({ tabSelected }: Props){
   const navigate = useNavigate()
   const {setSelect} = useSelect()
+
   return(
     <>
       {
