@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: 30vw;
   margin: 1rem;
   flex-direction: column;
-  border-bottom: 1px solid ${theme.colors.hover};
+  border-bottom: 1px solid ${theme.colors.line};
 `;
 
 export const Title = styled.div`
@@ -69,6 +69,6 @@ export const Padlock = styled.div`
   justify-content: center;
 
   svg {
-    color: ${({isPrivate}: Props) => isPrivate ? theme.colors.line : theme.colors.on };
+    color: ${({isPrivate}: Props) => isPrivate ? theme.colors.warn : theme.colors.on };
   }
 `;

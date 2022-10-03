@@ -51,7 +51,7 @@ export const Logout = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${theme.colors.line};
+    color: ${theme.colors.warn};
     font-size: 1.1rem;
     margin: 1rem 1rem 1rem 0;
     height: 1.1rem;

@@ -6,16 +6,22 @@ import { SelectProvider } from './providers/Select'
 
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
+import { FollowersProvider } from './providers/Followers'
+import { FollowingProvider } from './providers/Following'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <UserProvider>
       <ReposProvider>
-        <SelectProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </SelectProvider>
+        <FollowersProvider>
+          <FollowingProvider>
+            <SelectProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </SelectProvider>
+          </FollowingProvider>
+        </FollowersProvider>
       </ReposProvider>
     </UserProvider>
   </React.StrictMode>

@@ -34,32 +34,32 @@ const Home = () => {
           <FiLogOut/>
         </Logout>
       </Header>
-        <Avatar>
-          <img src={user.avatar_url}/>
-        </Avatar>
+      <Avatar>
+        <img src={user.avatar_url}/>
+      </Avatar>
       <Profile>
         <Aside title={user.name}/>
       </Profile>
-        <Contact>
-          <span>
-            {user.email}
-          </span>
-          <span>
-            {user.location}
-          </span>
-        </Contact>
-        <Stripe>
-          <Button title="Seguidores" number={user.followers} link={user.followers_url} />
-          <Button title="Seguindo" number={user.following} link={user.following_url} />
-          <Button title="Repos" number={user.public_repos} link={user.public_repos} />
-        </Stripe>
-        <Bio>
-          <Aside title="BIO"/>
-        </Bio>
-        <Content>
-          {user.bio}
-        </Content>
-        <Footer/>
+      <Contact>
+        <span>
+          {user.email}
+        </span>
+        <span>
+          {user.location}
+        </span>
+      </Contact>
+      <Stripe>
+        <Button title="Seguidores" number={user.followers} link={user.followers_url} />
+        <Button title="Seguindo" number={user.following} link={user.following_url} />
+        <Button title="Repos" number={user.public_repos} link={user.public_repos} />
+      </Stripe>
+      <Bio>
+        <Aside title="BIO"/>
+      </Bio>
+      <Content>
+        {user.bio}
+      </Content>
+      <Footer/>
     </LayoutDefault>
     )
 }

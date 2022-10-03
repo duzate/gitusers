@@ -12,7 +12,7 @@ const Repos = () => {
   
   return(
     <LayoutDefault>
-      <HeaderPage title={Number.parseInt(user.public_repos) > 1 ? "Repositórios" : "Repositório"} repo={user.public_repos}/>  
+      <HeaderPage title={Number.parseInt(user.public_repos) > 1 ? "Repositórios" : "Repositório"} count={user.public_repos}/>  
         <Scroll>
         {
           repos.map(repo => (
