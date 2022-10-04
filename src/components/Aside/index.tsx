@@ -1,7 +1,7 @@
 import { AsideBar, Container } from "./styles"
 
 type Props = {
-  title: string;
+  title?: string;
 }
 
 export const Aside = ({title, ...rest}: Props) => {

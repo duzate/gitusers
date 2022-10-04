@@ -15,9 +15,12 @@ const Home = () => {
   
   const handleLogout = () => {
     setUsername('')
-    setUser({} as UserProps)
+    setUser(null)
     localStorage.removeItem('user')
     localStorage.removeItem('username')
+    localStorage.removeItem('followers')
+    localStorage.removeItem('following')
+    localStorage.removeItem('repos')
     navigate('/login')
   }  
 
@@ -25,7 +28,7 @@ const Home = () => {
     <LayoutDefault>
       <Header>
         <span>
-          #{user.login}
+          #{user?.login}
         </span>
         <Logout onClick={handleLogout}>
           <span>
@@ -35,29 +38,29 @@ const Home = () => {
         </Logout>
       </Header>
       <Avatar>
-        <img src={user.avatar_url}/>
+        <img src={user?.avatar_url}/>
       </Avatar>
       <Profile>
-        <Aside title={user.name}/>
+        <Aside title={user?.name}/>
       </Profile>
       <Contact>
         <span>
-          {user.email}
+          {user?.email}
         </span>
         <span>
-          {user.location}
+          {user?.location}
         </span>
       </Contact>
       <Stripe>
-        <Button title="Seguidores" number={user.followers} link={user.followers_url} />
-        <Button title="Seguindo" number={user.following} link={user.following_url} />
-        <Button title="Repos" number={user.public_repos} link={user.public_repos} />
+        <Button title="Seguidores" number={user?.followers}  />
+        <Button title="Seguindo" number={user?.following}  />
+        <Button title="Repos" number={user?.public_repos} />
       </Stripe>
       <Bio>
         <Aside title="BIO"/>
       </Bio>
       <Content>
-        {user.bio}
+        {user?.bio}
       </Content>
       <Footer/>
     </LayoutDefault>

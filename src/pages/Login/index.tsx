@@ -18,7 +18,7 @@ const Login = () => {
   const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value)
   }
-
+  
   const handleSignin = async () => {
     if(!username) return console.log('Erro');
   
@@ -35,7 +35,7 @@ const Login = () => {
       setRepos(repos)
       setFollowers(followers)
       setFollowing(following)
-      navigate('/home')
+      navigate('/')
     }
     catch (err) {
       return console.log(err)

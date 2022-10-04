@@ -1,20 +1,15 @@
-import { useAuth } from "../../Hooks/Auth";
-import { api } from "../../services/api";
+
 import { Container, Count } from "./styles"
 
 type ButtonProps = {
-  title: string;
-  number: string;
-  link: string;
+  title?: string;
+  number?: string;
 }
 
-export const Button =  ({title, number, link}: ButtonProps)  => {
-  const { user } = useAuth()
-  const handlePage = async () => {
-    const response = await fetch(link)
-  } 
+export const Button =  ({title, number}: ButtonProps)  => {
+
   return(
-    <Container onClick={handlePage}>
+    <Container>
       <Count>
         {number}
       </Count>

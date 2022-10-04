@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import { UserContextProps } from '../@types/UserContext';
 import { UserProps } from '../@types/User';
 
-export const UserContext = createContext({} as UserContextProps);
+export const UserContext = createContext<UserContextProps>(null!);
 
 type Props = {
   children?: React.ReactNode
@@ -15,10 +15,10 @@ export const UserProvider = ({ children }: Props) => {
     usernameStorage ? setUsername(usernameStorage) : ''
   }, [])
 
-  const [user, setUser] = useState({} as UserProps)
+  const [user, setUser] = useState<UserProps | null>(null)
   useEffect(()=> {
     const userStorage = localStorage.getItem('user')
-    userStorage ? setUser(JSON.parse(userStorage)) : ''
+    userStorage ? setUser(JSON.parse(userStorage)) : null
   }, [])
 
   return (

@@ -4,19 +4,21 @@ import { HeaderPage } from "../../components/HeaderPage";
 import { useAuth } from "../../Hooks/Auth";
 import { useFollowers } from "../../Hooks/Followers";
 import { Follow } from "../../components/Follow";
-
+import { Scroll } from "../../components/Scroll";
 
 const Followers = () => {
   const {user} = useAuth()
   const {followers} = useFollowers()
   return(
     <LayoutDefault>
-      <HeaderPage title={Number.parseInt(user.followers) > 1 ? "Seguindores" : 'Seguidor' } count={user.followers} />
-      {
+      <HeaderPage title={!user?.followers ? "Seguindores" : 'Seguidor' } count={user?.followers} />
+      <Scroll>
+        {
           followers.map(follower => (
             <Follow key={follower.id} avatar={follower.avatar_url} login={follower.login} />
-            ))
-          }
+          ))
+        }
+      </Scroll>
     </LayoutDefault>
   )
 }

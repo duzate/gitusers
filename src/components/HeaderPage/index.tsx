@@ -3,8 +3,8 @@ import { FaArrowLeft } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom"
 
 type Props = {
-  title: string
-  count: string
+  title?: string
+  count?: string
 }
 
 export const HeaderPage = ({title, count}: Props) => {
