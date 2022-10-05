@@ -4,7 +4,6 @@ import { theme } from "../../global/styles/Themes";
 export const Container = styled.div`
   display: flex;
   width: 30vw;
-  margin: 1rem;
   flex-direction: column;
   border-bottom: 1px solid ${theme.colors.line};
 `;

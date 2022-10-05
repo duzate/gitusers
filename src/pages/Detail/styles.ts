@@ -1,24 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../global/styles/Themes";
 
-export const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  `;
-
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
-  width: 30vw;
-  height: 100vh;
-  background-color: ${theme.colors.background};
-  border-radius: .8rem;
-  color: ${theme.colors.white};
-`;
-
-export const Header = styled.div`
+export const  Header = styled.div`
   display: flex;
   width: 30vw;
   height: 20vh;
@@ -27,40 +10,28 @@ export const Header = styled.div`
   justify-content: space-between;
 
   span {
-    margin: 1rem 1rem;
+    margin: 1rem 0;
     font-size: 1rem;
     font-weight: bold;
     color: ${theme.colors.white};
     font-family: sans-serif;
-  }
-`;
-
-export const Logout = styled.div`
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-
-  span {
     display: flex;
-    font-size: 1rem;
-    margin: 1rem .5rem;
-    height: 1em;
+    justify-content: center;
+    flex: 1;
   }
 
   svg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: ${theme.colors.warn};
+    width: 3rem;
     font-size: 1.1rem;
-    margin: 1rem 1rem 1rem 0;
+    margin: 1rem 0;
     height: 1.1rem;
   }
 `;
-
 export const Avatar = styled.div`
-  width:  30vw;
-  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   img{
     height: 7rem;
     width: 7rem;
@@ -87,7 +58,7 @@ export const Stripe = styled.div`
   width: 30vw;
   height: 12vh;
   background-color: ${theme.colors.stripe};
-  margin: 6vh 0;
+  margin-top: 6vh;
 `;
 
 export const Bio = styled.div`

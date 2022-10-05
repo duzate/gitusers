@@ -11,7 +11,7 @@ const Followers = () => {
   const {followers} = useFollowers()
   return(
     <LayoutDefault>
-      <HeaderPage title={!user?.followers ? "Seguindores" : 'Seguidor' } count={user?.followers} />
+      <HeaderPage title={user?.followers  == '1'? 'Seguidor' : "Seguindores" } count={user?.followers} />
       <Scroll>
         {
           followers.map(follower => (

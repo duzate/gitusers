@@ -1,23 +1,24 @@
 
-import { Avatar, Header, Logout, Profile, Contact, Stripe, Bio, Content } from "./styles";
-import { FiLogOut } from 'react-icons/fi'
+import { Avatar, Header, Profile, Contact, Stripe, Bio, Content } from "./styles";
+import { FiLogIn } from 'react-icons/fi'
 import { useAuth } from "../../Hooks/Auth";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 import { LayoutDefault } from "../../components/LayoutDefault";
 import { Aside } from "../../components/Aside";
 import { Log } from "../../components/Log";
+import { BackPage } from "../../components/Backpage";
 
-const Home = () => {
-  const {user, handleLogout} = useAuth();
-  
+const Detail = () => {
+  const {user, setUser} = useAuth();
   return(
     <LayoutDefault>
       <Header>
+        <BackPage/>
         <span>
           #{user?.login}
         </span>
-        <Log icon={FiLogOut} title="Sair" onClick={handleLogout}/>
+        <Log title="Salvar" icon={FiLogIn} onClick={()=>setUser(null)} />
       </Header>
       <Avatar>
         <img src={user?.avatar_url}/>
@@ -47,4 +48,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Detail;
