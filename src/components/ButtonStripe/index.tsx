@@ -4,12 +4,13 @@ import { Container, Count } from "./styles"
 type ButtonProps = {
   title?: string;
   number?: string;
+  onClick: () => void;
 }
 
-export const Button =  ({title, number}: ButtonProps)  => {
+export const ButtonStripe =  ({title, number, ...rest}: ButtonProps)  => {
 
   return(
-    <Container>
+    <Container {...rest}>
       <Count>
         {number}
       </Count>

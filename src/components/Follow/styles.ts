@@ -8,7 +8,6 @@ export const Container = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid ${theme.colors.hover};
 
-
   svg {
     fill: ${theme.colors.white};
     margin-right: 1rem;

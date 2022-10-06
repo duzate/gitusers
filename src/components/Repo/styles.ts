@@ -22,7 +22,7 @@ export const Description = styled.div`
   display: flex;
   width: 30vw;
   font-size: 1rem;
-  padding: .8rem 0 1.3rem 1.3rem;
+  padding: 0 0 0 1.3rem;
 
   span {
     padding: 0 1.3rem 1.3rem 0;

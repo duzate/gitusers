@@ -17,7 +17,7 @@ export const Follow = ({avatar, login }: Props) => {
     <Container>
       <Profile>
         <Aside/>
-        <Avatar alt={login} img={avatar} length={4}/>
+        <Avatar name={login} urlImg={avatar} length={4} />
         <span>#{login}</span>
       </Profile>
       <AiOutlineArrowRight onClick={() => navigate(`${login}`)}/>

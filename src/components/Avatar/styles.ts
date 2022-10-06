@@ -3,13 +3,15 @@ import { theme } from "../../global/styles/Themes";
 
 
 type Props = {
-  length: number;
+  length?: number;
+  position?: number;
 }
 
 export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: ${({ position}: Props) => `-${position}rem`};
 
   img{
     height: ${({ length}: Props) => `${length}rem`};

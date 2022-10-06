@@ -3,13 +3,13 @@ import { theme } from "../../global/styles/Themes";
 
 export const Container = styled.div`
   display: flex;
-  
+  padding: 2rem 0 2rem 0;
+
   span {
     display: flex;
     align-items: center;
     font-weight: bold;
     font-size: 1.3rem;
-
   }
 `;
 
@@ -20,5 +20,4 @@ export const AsideBar = styled.div`
   height: 42px;
   border-radius: 0 8px 8px 0;
   margin-right: 14px;
-
 `

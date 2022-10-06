@@ -27,49 +27,13 @@ export const  Header = styled.div`
     height: 1.1rem;
   }
 `;
-export const Avatar = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  img{
-    height: 7rem;
-    width: 7rem;
-    border: 2px solid ${theme.colors.white};
-    border-radius: 50rem;
-    margin-top: -6vh;
-  }
-`
-export const Profile = styled.div`
-  width: 30vw;
-  display: flex;
-`
 
 export const Contact = styled.div`
   display: flex;
   flex-direction: column;
   width: 30vw;
-  margin-left: 4vw;
-`;
-
-export const Stripe = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 30vw;
-  height: 12vh;
-  background-color: ${theme.colors.stripe};
-  margin-top: 6vh;
-`;
-
-export const Bio = styled.div`
-  display: flex;
-  width: 30vw;
-  margin: 1rem;
-  text-transform: uppercase;
-`;
-
-export const Content = styled.div`
-  width: 30vw;
-  padding: 0 1.5rem;
-  text-align: justify;
+  margin-left: 2vw;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
 `;

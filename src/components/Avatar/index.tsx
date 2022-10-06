@@ -1,16 +1,17 @@
 import { Container } from "./styles"
 
 type Props = {
-  img: string,
-  alt: string,
-  length: number
+  urlImg?: string,
+  name?: string,
+  length?: number
+  position?: number
 }
 
-export const Avatar = ({img, alt, length}: Props) => {
+export const Avatar = ({urlImg, name, length, position}: Props) => {
   
   return (
-    <Container length={length}>
-      <img src={img} alt={alt} />
+    <Container length={length} position={position}>
+      <img src={urlImg} alt={name} />
     </Container>
   )
 }
