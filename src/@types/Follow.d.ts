@@ -1,8 +1,8 @@
 export type FollowProps = 
   [
     {
-      login: string,
       id: string,
+      login: string,
       avatar_url: string,
       url: string,
     } 

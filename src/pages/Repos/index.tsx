@@ -3,8 +3,8 @@ import { LayoutDefault } from "../../components/LayoutDefault";
 import { HeaderPage } from "../../components/HeaderPage";
 import { useAuth } from "../../Hooks/Auth";
 import { Repo } from "../../components/Repo/Index";
-import { useRepos } from "../../Hooks/Repos";
 import { Scroll } from "../../components/Scroll";
+import { useRepos } from "../../Hooks/Repos";
 
 const Repos = () => {
   const {user} = useAuth();
@@ -12,7 +12,7 @@ const Repos = () => {
   
   return(
     <LayoutDefault>
-      <HeaderPage title={Number.parseInt(user.public_repos) > 1 ? "Repositórios" : "Repositório"} count={user.public_repos}/>  
+      <HeaderPage title={user?.public_repos == '1' ?  "Repositório" : "Repositórios"} count={user?.public_repos}/>  
         <Scroll>
           {
           repos.map(repo => (

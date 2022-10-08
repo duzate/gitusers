@@ -1,6 +1,9 @@
-import { AsideBar } from "../Aside/styles"
-import { Avatar, Container, Profile } from "./styles"
+
+import { Container, Profile } from "./styles"
 import { AiOutlineArrowRight } from 'react-icons/ai'
+import { Aside } from "../Aside"
+import { useNavigate } from "react-router-dom"
+import { Avatar } from "../Avatar"
 
 type Props = {
   avatar: string,
@@ -8,16 +11,16 @@ type Props = {
 }
 
 export const Follow = ({avatar, login }: Props) => {
+
+  const navigate = useNavigate();
   return(
     <Container>
       <Profile>
-        <AsideBar/>
-        <Avatar>
-          <img src={avatar} alt={login} />
-        </Avatar>
+        <Aside/>
+        <Avatar name={login} urlImg={avatar} length={4} />
         <span>#{login}</span>
       </Profile>
-      <AiOutlineArrowRight/>
+      <AiOutlineArrowRight onClick={() => navigate(`${login}`)}/>
     </Container>
   )
 }

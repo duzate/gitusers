@@ -14,7 +14,7 @@ export const ReposProvider = ({ children }: Props) => {
 
   useEffect(()=> {
     const ReposStorage = localStorage.getItem('repos')
-    ReposStorage ? setRepos(JSON.parse(ReposStorage)) : ''
+    ReposStorage ? setRepos(JSON.parse(ReposStorage)) : []
   }, [])
 
   return (

@@ -14,7 +14,7 @@ export const FollowersProvider = ({ children }: Props) => {
 
   useEffect(()=> {
     const FollowersStorage = localStorage.getItem('followers')
-    FollowersStorage ? setFollowers(JSON.parse(FollowersStorage)) : ''
+    FollowersStorage ? setFollowers(JSON.parse(FollowersStorage)) : []
   }, [])
 
   return (

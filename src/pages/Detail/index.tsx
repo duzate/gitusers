@@ -1,28 +1,28 @@
 
-import { Log } from "../../components/Log";
-import { useAuth } from "../../Hooks/Auth";
-import { Aside } from "../../components/Aside";
-import { Avatar } from "../../components/Avatar";
-import { Footer } from "../../components/Footer";
-import { Stripes } from "../../components/Stripe";
-import { LayoutDefault } from "../../components/LayoutDefault";
-
-import { FiLogOut } from 'react-icons/fi'
 import { Header, Contact } from "./styles";
+import { FiLogIn } from 'react-icons/fi'
+import { useAuth } from "../../Hooks/Auth";
+import { Footer } from "../../components/Footer";
+import { LayoutDefault } from "../../components/LayoutDefault";
+import { Aside } from "../../components/Aside";
+import { Log } from "../../components/Log";
+import { BackPage } from "../../components/Backpage";
+import { Avatar } from "../../components/Avatar";
+import { Stripes } from "../../components/Stripe";
 import { Content } from "../../components/Content";
 
-const Home = () => {
-  const {user, handleLogout} = useAuth();
-  
+const Detail = () => {
+  const {user, setUser} = useAuth();
   return(
     <LayoutDefault>
       <Header>
+        <BackPage/>
         <span>
           #{user?.login}
         </span>
-        <Log icon={FiLogOut} title="Sair" onClick={handleLogout}/>
+        <Log title="Salvar" icon={FiLogIn} onClick={()=>setUser(null)} />
       </Header>
-      <Avatar length={7} name={user?.login} position={3.5} urlImg={user?.avatar_url} />
+      <Avatar name={user?.login} urlImg={user?.avatar_url} length={7} position={3.5} />
       <Aside title={user?.name}/>
       <Contact>
         <span>
@@ -32,7 +32,7 @@ const Home = () => {
           {user?.location}
         </span>
       </Contact>
-      <Stripes/>
+      <Stripes disabled/>
       <Aside title="BIO"/>
       <Content text={user?.bio}/>
       <Footer/>
@@ -40,4 +40,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Detail;

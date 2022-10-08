@@ -3,6 +3,8 @@ import { theme } from "../../global/styles/Themes";
 
 export const Container = styled.div`
   display: flex;
+  padding: 2rem 0 2rem 0;
+
   span {
     display: flex;
     align-items: center;

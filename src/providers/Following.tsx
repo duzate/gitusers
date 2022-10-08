@@ -14,7 +14,7 @@ export const FollowingProvider = ({ children }: Props) => {
 
   useEffect(()=> {
     const FollowingStorage = localStorage.getItem('following')
-    FollowingStorage ? setFollowing(JSON.parse(FollowingStorage)) : ''
+    FollowingStorage ? setFollowing(JSON.parse(FollowingStorage)) : []
   }, [])
 
   return (

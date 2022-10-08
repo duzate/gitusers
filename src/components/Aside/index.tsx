@@ -4,7 +4,7 @@ type Props = {
   title?: string;
 }
 
-export const Aside = ({title, ...rest}: Props) => {
+export const Aside = ({title}: Props) => {
   return (
     <Container >
       <AsideBar/>
