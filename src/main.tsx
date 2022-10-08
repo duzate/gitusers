@@ -12,18 +12,18 @@ console.log(window.location.pathname);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <UserProvider>
-      <ReposProvider>
-        <FollowersProvider>
-          <FollowingProvider>
-            <SelectProvider>
-              <BrowserRouter>
+    <BrowserRouter>
+      <UserProvider>
+        <ReposProvider>
+          <FollowersProvider>
+            <FollowingProvider>
+              <SelectProvider>
                 <App />
-              </BrowserRouter>
-            </SelectProvider>
-          </FollowingProvider>
-        </FollowersProvider>
-      </ReposProvider>
-    </UserProvider>
+              </SelectProvider>
+            </FollowingProvider>
+          </FollowersProvider>
+        </ReposProvider>
+      </UserProvider>
+    </BrowserRouter>
   </React.StrictMode>
 )

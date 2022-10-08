@@ -1,4 +1,5 @@
 import axios from "axios";
+import { UserProps } from "../@types/User";
 
 const api = axios.create(
   {
@@ -9,22 +10,33 @@ const api = axios.create(
 export const useApi = () => 
   (
     {
-      repos: async (username: string) => {
-        const response = await api.get(`${username}/repos`)
-        return response.data;
-      },
       login: async (username: string) => {
-        const response = await api.get(`${username}`)
-        return response.data;
-      },
-      followers: async (username: string) => {
-        const response = await api.get(`${username}/followers`)
-        return response.data;
-      },
-      following: async (username: string) => {
-        const response = await api.get(`${username}/following`)
-        return response.data;
-      },
+        const user:UserProps = await api.get(`${username}`)
+        const repos = await api.get(`${username}/repos`)
+        const followers = await api.get(`${username}/followers`)
+        const following = await api.get(`${username}/following`)
+        
+        const data = <UserProps>{
+          login: user.login,
+          name: user.name,
+          email: user.email,
+          location: user.location,
+          company: user.company,
+          bio: user.bio,
+          avatar_url: user.bio,
+          organizations_url: user.organizations_url,
+          starred_url: user.starred_url, 
+          public_repos: user.public_repos, 
+          public_gists: user.public_gists, 
+          followers: user.followers, 
+          following: user.following,
+          followers_url: followers.data,
+          following_url: following.data,
+          repos: repos.data,
+        }
+
+        return data;
+      }
     }
   )
 
