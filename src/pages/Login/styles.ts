@@ -24,7 +24,7 @@ export const Container = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 20rem;
+  width: 25vw;
   height: 3rem;
   border-radius: .6em;
   margin-top: 2.2em;
@@ -43,7 +43,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   height: 3rem;
-  width: 20rem;
+  width: 25vw;
   font-size: 1.25em;
   border-radius: .6em;
   margin-top: 1.2em;

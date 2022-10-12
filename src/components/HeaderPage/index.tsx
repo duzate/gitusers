@@ -13,7 +13,7 @@ export const HeaderPage = ({title, count}: Props) => {
     <Header>
       <BackPage />
       <span>{count + " " + title}</span>
-      <div style={{margin:'1rem 1rem'}}/>
+      <div style={{width: '4rem'}}/>
     </Header>
   )
 }

@@ -9,10 +9,11 @@ export const Logs = styled.div`
   display: flex;
   justify-content: center;
   cursor: pointer;
+  width: 5rem;
 
   span {
-    display: flex;
     font-size: 1rem;
+
   }
 
   svg {

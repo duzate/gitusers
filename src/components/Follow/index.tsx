@@ -4,6 +4,8 @@ import { AiOutlineArrowRight } from 'react-icons/ai'
 import { Aside } from "../Aside"
 import { useNavigate } from "react-router-dom"
 import { Avatar } from "../Avatar"
+import { useApi } from "../../services/api"
+import { useFollow } from "../../Hooks/Follow"
 
 type Props = {
   avatar: string,
@@ -11,8 +13,15 @@ type Props = {
 }
 
 export const Follow = ({avatar, login }: Props) => {
-
+  const api = useApi()
   const navigate = useNavigate();
+  const {setFollow} = useFollow()
+  const handleFollow = async () => {
+    const follow = await api.login(login);
+    setFollow(follow)
+    localStorage.setItem('follow', JSON.stringify(follow))
+  }
+
   return(
     <Container>
       <Profile>
@@ -20,7 +29,14 @@ export const Follow = ({avatar, login }: Props) => {
         <Avatar name={login} urlImg={avatar} length={4} />
         <span>#{login}</span>
       </Profile>
-      <AiOutlineArrowRight onClick={() => navigate(`${login}`)}/>
+      <AiOutlineArrowRight 
+        onClick={
+          () => {
+            handleFollow()
+            navigate(`${login}`)
+          }
+        }
+      />
     </Container>
   )
 }

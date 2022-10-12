@@ -8,6 +8,7 @@ import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import { FollowersProvider } from './providers/Followers'
 import { FollowingProvider } from './providers/Following'
+import { FollowProvider } from './providers/Follow'
 console.log(window.location.pathname);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -17,9 +18,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <ReposProvider>
           <FollowersProvider>
             <FollowingProvider>
-              <SelectProvider>
-                <App />
-              </SelectProvider>
+              <FollowProvider>
+                <SelectProvider>
+                  <App />
+                </SelectProvider>
+              </FollowProvider>
             </FollowingProvider>
           </FollowersProvider>
         </ReposProvider>

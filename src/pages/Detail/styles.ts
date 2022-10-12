@@ -1,16 +1,23 @@
 import styled from "styled-components";
 import { theme } from "../../global/styles/Themes";
 
-export const  Header = styled.div`
+export const HeaderBackground = styled.div`
   display: flex;
   width: 30vw;
   height: 20vh;
   background-color: ${theme.colors.header};
   border-radius: .6em .6em 0 0;
   justify-content: space-between;
+`;
+
+export const Header = styled.div`
+  display: flex;
+  width: 30vw;
+  height: 3vh;
+  justify-content: space-between;
+  margin: 1rem 0;
 
   span {
-    margin: 1rem 0;
     font-size: 1rem;
     font-weight: bold;
     color: ${theme.colors.white};
@@ -19,15 +26,7 @@ export const  Header = styled.div`
     justify-content: center;
     flex: 1;
   }
-
-  svg {
-    width: 3rem;
-    font-size: 1.1rem;
-    margin: 1rem 0;
-    height: 1.1rem;
-  }
 `;
-
 
 export const Contact = styled.div`
   display: flex;
