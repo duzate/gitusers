@@ -28,8 +28,6 @@ export const Header = styled.div`
   }
 `;
 
-
-
 export const Contact = styled.div`
   display: flex;
   flex-direction: column;

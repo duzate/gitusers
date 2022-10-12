@@ -28,6 +28,16 @@ export const Header = styled.div`
   }
 `;
 
+export const Stripe = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 30vw;
+  height: 12vh;
+  background: ${theme.colors.stripe};
+  margin: 3vh 0;
+  opacity: none;
+`;
+
 export const Contact = styled.div`
   display: flex;
   flex-direction: column;

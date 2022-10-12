@@ -12,21 +12,21 @@ import { HeaderBackground, Contact, Header } from "./styles";
 import { Content } from "../../components/Content";
 
 const Home = () => {
-  const {user, handleLogout} = useAuth();
-  
-  return(
+  const { user, handleLogout } = useAuth();
+
+  return (
     <LayoutDefault>
       <HeaderBackground>
         <Header>
-          <div style={{width: '5rem'}}/>
+          <div style={{ width: '5rem' }} />
           <span>
             #{user?.login}
           </span>
-          <Log icon={FiLogOut} title="Sair" onClick={handleLogout}/>
+          <Log icon={FiLogOut} title="Sair" onClick={handleLogout} />
         </Header>
       </HeaderBackground>
       <Avatar length={7} name={user?.login} position={3.5} urlImg={user?.avatar_url} />
-      <Aside title={user?.name}/>
+      <Aside title={user?.name} />
       <Contact>
         <span>
           {user?.email}
@@ -35,12 +35,12 @@ const Home = () => {
           {user?.location}
         </span>
       </Contact>
-      <Stripes/>
-      <Aside title="BIO"/>
-      <Content text={user?.bio}/>
-      <Footer/>
+      <Stripes repos={user?.public_repos} followers={user?.followers} following={user?.following} />
+      <Aside title="BIO" />
+      <Content text={user?.bio} />
+      <Footer />
     </LayoutDefault>
-    )
+  )
 }
 
 export default Home;

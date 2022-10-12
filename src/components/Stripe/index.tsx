@@ -3,16 +3,21 @@ import { useAuth } from "../../Hooks/Auth"
 import { ButtonStripe } from "../ButtonStripe"
 import { Container } from "./styles"
 
+type Props = {
+  repos?: string;
+  followers?: string;
+  following?: string;
+}
 
-export const Stripes = ({...rest}) => {
+export const Stripes = ({ repos, followers, following, ...rest }: Props) => {
   const navigate = useNavigate()
-  const {user} = useAuth()
+  const { user } = useAuth()
   return (
-    
+
     <Container >
-      <ButtonStripe {...rest} number={user?.followers} title="Seguidores" onClick={() => navigate('/followers')}/>
-      <ButtonStripe {...rest} number={user?.following} title="Seguindo" onClick={() => navigate('/following')}/>
-      <ButtonStripe {...rest} number={user?.public_repos} title="Repos" onClick={() => navigate('/repos')}/>
+      <ButtonStripe {...rest} number={followers} title="Seguidores" onClick={() => navigate('/followers')} />
+      <ButtonStripe {...rest} number={following} title="Seguindo" onClick={() => navigate('/following')} />
+      <ButtonStripe {...rest} number={repos} title="Repos" onClick={() => navigate('/repos')} />
     </Container>
   )
 }

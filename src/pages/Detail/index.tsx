@@ -18,17 +18,17 @@ import { useFollowing } from "../../Hooks/Following";
 
 const Detail = () => {
   const api = useApi();
-  const {follow} = useFollow();
-  const {setRepos} = useRepos();
-  const {setFollowers} = useFollowers();
-  const {setFollowing} = useFollowing();
-  const {setUser, setUsername} = useAuth()
-  
-  return(
+  const { follow } = useFollow();
+  const { setRepos } = useRepos();
+  const { setFollowers } = useFollowers();
+  const { setFollowing } = useFollowing();
+  const { setUser, setUsername } = useAuth()
+
+  return (
     <LayoutDefault>
       <HeaderBackground>
         <Header>
-          <BackPage/>
+          <BackPage />
           <span>
             #{follow?.login}
           </span>
@@ -46,17 +46,17 @@ const Detail = () => {
                 setRepos(repos);
                 setFollowers(followers);
                 setFollowing(following);
-              setUsername(follow?.login)
-              setUser(follow)
+                setUsername(follow?.login)
+                setUser(follow)
               }
               catch (err) {
                 return console.log(err)
               }
-            }}/>
+            }} />
         </Header>
       </HeaderBackground>
       <Avatar name={follow?.login} urlImg={follow?.avatar_url} length={7} position={3.5} />
-      <Aside title={follow?.name}/>
+      <Aside title={follow?.name} />
       <Contact>
         <span>
           {follow?.email}
@@ -65,12 +65,12 @@ const Detail = () => {
           {follow?.location}
         </span>
       </Contact>
-      <Stripes disabled/>
-      <Aside title="BIO"/>
-      <Content text={follow?.bio}/>
-      <Footer/>
+      <Stripes repos={follow?.public_repos} followers={follow?.followers} following={follow?.following} />
+      <Aside title="BIO" />
+      <Content text={follow?.bio} />
+      <Footer />
     </LayoutDefault>
-    )
+  )
 }
 
 export default Detail;
