@@ -15,7 +15,7 @@ export const Container = styled.div`
   width: 30vw;
   height: 100vh;
   background-color: ${theme.colors.background};
-  border-radius: .8em;
+  border-radius: .8rem;
 
   svg {
     color: #FFCE00;
@@ -23,30 +23,44 @@ export const Container = styled.div`
   }
 `;
 
-export const Input = styled.input`
+export const ContainerInput = styled.div`
+  display: flex;
   width: 25vw;
   height: 3rem;
-  border-radius: .6em;
-  margin-top: 2.2em;
+  background-color: ${theme.colors.white};
+  justify-content: center;
+  align-items: center;
+  border-radius: .6rem;
+  padding: 1rem 1rem;
+  margin-top: 2rem;
+`;
+
+type LabelProps = {
+  Error: boolean
+}
+
+export const Label = styled.label`
+  color: ${theme.colors.warn};
+  width: 50%;
+  text-align: center;
+  display: ${({ Error }: LabelProps) => Error ? '' : 'none'};
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  height: 3rem;
+  border-radius: .6rem;
   border: none;
-  padding: 1em 1em;
   outline: none;
-  font-size: 1.25em;
-  
-  :hover {
-    border: none;
-  }
-  :focus{
-    border: none;
-  }
+  font-size: 1.25rem;
 `;
 
 export const Button = styled.button`
   height: 3rem;
   width: 25vw;
-  font-size: 1.25em;
-  border-radius: .6em;
-  margin-top: 1.2em;
+  font-size: 1.25rem;
+  border-radius: .6rem;
+  margin-top: 1.2rem;
   border: none;
   background-color: ${theme.colors.git};
   display: flex;
@@ -58,8 +72,8 @@ export const Button = styled.button`
   span {
     display: flex;
     align-items: center;
-    margin-right: .8em;
-    font-size: 1em;
+    margin-right: .8rem;
+    font-size: 1rem;
     font-weight: bold;
   }
 
